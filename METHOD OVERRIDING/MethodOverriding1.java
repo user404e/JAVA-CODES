@@ -1,22 +1,34 @@
-// simple program to demonstrate the method overriding
+class Sports{
 
-class A{
-    void demo(){
-        System.out.println("CLASS A");
+    String getName(){
+        return "Generic Sports";
+    }
+  
+    void getNumberOfTeamMembers(){
+        System.out.println( "Each team has n players in " + getName() );
     }
 }
-class B extends A{
-    void demo(){
-        System.out.println("CLASS B");
+
+class Soccer extends Sports{
+    @Override
+    String getName(){
+        return "Soccer Class";
     }
+    void getNumberOfTeamMembers(){
+        System.out.println( "Each team has 11 players in " + getName() );
+    }
+    // Write your overridden getNumberOfTeamMembers method here
+
 }
 
 public class MethodOverriding1{
-    public static void main(String[] args) {
-        A a1 = new A();
-        B b1 = new B();
-
-        a1.demo();
-        b1.demo();
-    }
+	
+    public static void main(String []args){
+        Sports c1 = new Sports();
+        Soccer c2 = new Soccer();
+        System.out.println(c1.getName());
+        c1.getNumberOfTeamMembers();
+        System.out.println(c2.getName());
+        c2.getNumberOfTeamMembers();
+	}
 }
