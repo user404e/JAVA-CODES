@@ -1,8 +1,8 @@
-abstract class abs{
-    abstract void printdata();
+final class abs{
 
+    int a = 10;
     void show(){
-        System.out.println("Hello");
+        System.out.println(a);
     }
 }
 
